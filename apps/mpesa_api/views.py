@@ -10,8 +10,8 @@ from . mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
 
 
 def getAccessToken(request):
-    consumer_key = 'Ez4umg995u17jWJ63XhnaBDZAJVfj2Mu'
-    consumer_secret = 'TIogVGbMVdgVGAvn'
+    consumer_key = '' #mpesa consumer key from Daraja API platform
+    consumer_secret = '' #mpesa consumer secret from Daraja API platform
     api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
     r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
     mpesa_access_token = json.loads(r.text)
@@ -29,10 +29,10 @@ def lipa_na_mpesa_online(request):
         "Amount": 1,
         "PartyA": 254701220024,  # replace with your phone number to get stk push
         "PartyB": LipanaMpesaPpassword.Business_short_code,
-        "PhoneNumber": 254728851119,  # replace with your phone number to get stk push
+        "PhoneNumber": 254701220024,  # replace with your phone number to get stk push
         "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
-        "AccountReference": "Henry",
-        "TransactionDesc": "Testing stk push"
+        "AccountReference": "Kennedy",
+        "TransactionDesc": "STK push"
     }
     response = requests.post(api_url, json=request, headers=headers)
     return HttpResponse('success')
