@@ -6,8 +6,8 @@ from datetime import datetime
 import base64
 
 class MpesaC2BCredentials:
-    consumer_key = 'Ez4umg995u17jWJ63XhnaBDZAJVfj2Mu'
-    consumer_secret = 'TIogVGbMVdgVGAvn'
+    consumer_key = '' #mpesa consumer key from Daraja API platform
+    consumer_secret = '' #mpesa consumer secret from Daraja API platform
     api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
 
 
